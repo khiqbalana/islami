@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>404</title>
+</head>
+<body>
+<!-- REDIRECTING STARTS -->
+<link rel="canonical" href="/"/>
+<noscript>
+    <meta http-equiv="refresh" content="5;URL=/">
+</noscript>
+<!--[if lt IE 9]><script type="text/javascript">var IE_fix=true;</script><![endif]-->
+<script type="text/javascript">
+    var url = "/";
+    var delay = "0";
+    window.onload = function ()
+    {
+        setTimeout(GoToURL, delay);
+    }
+    function GoToURL()
+    {
+        if(typeof IE_fix != "undefined") // IE8 and lower fix to pass the http referer
+        {
+            var referLink = document.createElement("a");
+            referLink.href = url;
+            document.body.appendChild(referLink);
+            referLink.click();
+        }
+        else { window.location.replace(url); } // All other browsers
+    }
+</script>
+</body>
+</html>
